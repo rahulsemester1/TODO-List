@@ -2,14 +2,15 @@ let input=document.querySelector("input");
 let add_btn=document.querySelector(".add");
 let ul=document.querySelector("ul");
 
-
-
 add_btn.addEventListener("click",function(){
 
      let list=document.createElement("li");
+     list.classList.add("list-group-item");
      list.innerText=input.value;
 
      let delBtn=document.createElement("button");
+     delBtn.classList.add("btn","btn-danger");      
+     
      delBtn.innerText="Delete";
      delBtn.classList.add("delete");
 
@@ -17,18 +18,6 @@ add_btn.addEventListener("click",function(){
      ul.appendChild(list);
      input.value="";
 });
-
-// let delbtns=document.querySelectorAll(".delete");
-
-// for(del of delbtns){
-//     del.addEventListener("click",function(){
-//         console.log("element deleted");
-//         // console.log(del);
-//         //  let parent=this.parentElement;
-//         //  console.log(parent);
-//     });
-// }
-
 
 let delbtns=document.querySelectorAll(".delete")[1];
 ul.addEventListener("click",function(event){
@@ -38,13 +27,4 @@ ul.addEventListener("click",function(event){
                   console.log(`${event.target.parentElement.innerText}`);
        }
 
-  
-    
-// for(del of delbtns){
-//     del.addEventListener("click",function(){
-//         console.log("element deleted");
-//         // console.log(del);
-//         //  let parent=this.parentElement;
-//         //  console.log(parent);
-//     });
 });
